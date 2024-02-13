@@ -8,9 +8,9 @@ def hello():
     return "Hello"
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(port=port)
-    print("Webhook is listening on port", port)  # Log listening message
+    # port = int(os.environ.get("PORT", 5000))
+    # app.run(port=port)
+    print("Webhook is listening ")  # Log listening message
 
 VERIFY_TOKEN = "STRAVA"
 python_script = "strava.py"
