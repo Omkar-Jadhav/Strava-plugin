@@ -47,7 +47,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def home():\n    return \"Welcome to my Simple Flask App!\"\n@app.route(\"/about\")\ndef about():\n    return \"This is the about page.\"\nif __name__ == \"__main__\":\n    app.run(debug=True)",
+        "peekOfCode": "def home():\n    return \"Welcome to my Simple Flask App!\"\n@app.route(\"/about\")\ndef about():\n    return \"This is the about page.\"\nif __name__ == \"__main__\":\n    # app.run(debug=True)\n    print(\"listening\")",
         "detail": "main",
         "documentation": {}
     },
@@ -56,7 +56,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def about():\n    return \"This is the about page.\"\nif __name__ == \"__main__\":\n    app.run(debug=True)",
+        "peekOfCode": "def about():\n    return \"This is the about page.\"\nif __name__ == \"__main__\":\n    # app.run(debug=True)\n    print(\"listening\")",
         "detail": "main",
         "documentation": {}
     },
@@ -65,7 +65,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef home():\n    return \"Welcome to my Simple Flask App!\"\n@app.route(\"/about\")\ndef about():\n    return \"This is the about page.\"\nif __name__ == \"__main__\":\n    app.run(debug=True)",
+        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef home():\n    return \"Welcome to my Simple Flask App!\"\n@app.route(\"/about\")\ndef about():\n    return \"This is the about page.\"\nif __name__ == \"__main__\":\n    # app.run(debug=True)\n    print(\"listening\")",
         "detail": "main",
         "documentation": {}
     },
