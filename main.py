@@ -1,6 +1,6 @@
 import os
 from flask import Flask, request, jsonify
-import strava
+# import strava
 
 app = Flask(__name__)
 if __name__ == '__main__':
@@ -12,8 +12,8 @@ if __name__ == '__main__':
 def hello():
     return "Hello"
 
-VERIFY_TOKEN = "STRAVA"
-python_script = "strava.py"
+# VERIFY_TOKEN = "STRAVA"
+# python_script = "strava.py"
 
 # @app.route('/webhook', methods=['POST'])
 # def handle_webhook():
@@ -28,17 +28,17 @@ python_script = "strava.py"
 
 #     return jsonify({"message": "EVENT_RECEIVED"}), 200
 
-@app.route('/webhook', methods=['GET'])
-def verify_webhook():
-    mode = request.args.get('hub.mode')
-    token = request.args.get('hub.verify_token')
-    challenge = request.args.get('hub.challenge')
+# @app.route('/webhook', methods=['GET'])
+# def verify_webhook():
+#     mode = request.args.get('hub.mode')
+#     token = request.args.get('hub.verify_token')
+#     challenge = request.args.get('hub.challenge')
 
-    if mode and token:
-        if mode == 'subscribe' and token == VERIFY_TOKEN:
-            print("Webhook verified")
-            return jsonify({"hub.challenge": challenge})
-        else:
-            return "Invalid verification token", 403
+#     if mode and token:
+#         if mode == 'subscribe' and token == VERIFY_TOKEN:
+#             print("Webhook verified")
+#             return jsonify({"hub.challenge": challenge})
+#         else:
+#             return "Invalid verification token", 403
         
 
