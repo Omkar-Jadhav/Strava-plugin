@@ -81,16 +81,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def hello():\n    return \"Hello\"\nVERIFY_TOKEN = \"STRAVA\"\npython_script = \"strava.py\"\n@app.route('/webhook', methods=['POST'])\ndef handle_webhook():\n    # data = request.get_json()\n    latest_activity_id = request.args.get('object_id')\n    print(\"Webhook event received with activity:\", latest_activity_id)\n    strava.get_latest_activities()",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "handle_webhook",
-        "kind": 2,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "def handle_webhook():\n    # data = request.get_json()\n    latest_activity_id = request.args.get('object_id')\n    print(\"Webhook event received with activity:\", latest_activity_id)\n    strava.get_latest_activities()\n    # subprocess.run([\"python\", python_script], check=True, capture_output=True)\n    # stdout = subprocess.check_output([\"python\", python_script])  # Capture output for logging\n    # print(\"Python script output:\", stdout.decode())\n    return jsonify({\"message\": \"EVENT_RECEIVED\"}), 200\n@app.route('/webhook', methods=['GET'])",
+        "peekOfCode": "def hello():\n    return \"Hello\"\nVERIFY_TOKEN = \"STRAVA\"\npython_script = \"strava.py\"\n# @app.route('/webhook', methods=['POST'])\n# def handle_webhook():\n#     # data = request.get_json()\n#     latest_activity_id = request.args.get('object_id')\n#     print(\"Webhook event received with activity:\", latest_activity_id)\n#     strava.get_latest_activities()",
         "detail": "main",
         "documentation": {}
     },
@@ -117,7 +108,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "VERIFY_TOKEN = \"STRAVA\"\npython_script = \"strava.py\"\n@app.route('/webhook', methods=['POST'])\ndef handle_webhook():\n    # data = request.get_json()\n    latest_activity_id = request.args.get('object_id')\n    print(\"Webhook event received with activity:\", latest_activity_id)\n    strava.get_latest_activities()\n    # subprocess.run([\"python\", python_script], check=True, capture_output=True)\n    # stdout = subprocess.check_output([\"python\", python_script])  # Capture output for logging",
+        "peekOfCode": "VERIFY_TOKEN = \"STRAVA\"\npython_script = \"strava.py\"\n# @app.route('/webhook', methods=['POST'])\n# def handle_webhook():\n#     # data = request.get_json()\n#     latest_activity_id = request.args.get('object_id')\n#     print(\"Webhook event received with activity:\", latest_activity_id)\n#     strava.get_latest_activities()\n#     # subprocess.run([\"python\", python_script], check=True, capture_output=True)\n#     # stdout = subprocess.check_output([\"python\", python_script])  # Capture output for logging",
         "detail": "main",
         "documentation": {}
     },
@@ -126,7 +117,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "python_script = \"strava.py\"\n@app.route('/webhook', methods=['POST'])\ndef handle_webhook():\n    # data = request.get_json()\n    latest_activity_id = request.args.get('object_id')\n    print(\"Webhook event received with activity:\", latest_activity_id)\n    strava.get_latest_activities()\n    # subprocess.run([\"python\", python_script], check=True, capture_output=True)\n    # stdout = subprocess.check_output([\"python\", python_script])  # Capture output for logging\n    # print(\"Python script output:\", stdout.decode())",
+        "peekOfCode": "python_script = \"strava.py\"\n# @app.route('/webhook', methods=['POST'])\n# def handle_webhook():\n#     # data = request.get_json()\n#     latest_activity_id = request.args.get('object_id')\n#     print(\"Webhook event received with activity:\", latest_activity_id)\n#     strava.get_latest_activities()\n#     # subprocess.run([\"python\", python_script], check=True, capture_output=True)\n#     # stdout = subprocess.check_output([\"python\", python_script])  # Capture output for logging\n#     # print(\"Python script output:\", stdout.decode())",
         "detail": "main",
         "documentation": {}
     },

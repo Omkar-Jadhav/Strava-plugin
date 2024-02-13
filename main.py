@@ -15,18 +15,18 @@ def hello():
 VERIFY_TOKEN = "STRAVA"
 python_script = "strava.py"
 
-@app.route('/webhook', methods=['POST'])
-def handle_webhook():
-    # data = request.get_json()
-    latest_activity_id = request.args.get('object_id')
-    print("Webhook event received with activity:", latest_activity_id)
+# @app.route('/webhook', methods=['POST'])
+# def handle_webhook():
+#     # data = request.get_json()
+#     latest_activity_id = request.args.get('object_id')
+#     print("Webhook event received with activity:", latest_activity_id)
 
-    strava.get_latest_activities()
-    # subprocess.run(["python", python_script], check=True, capture_output=True)
-    # stdout = subprocess.check_output(["python", python_script])  # Capture output for logging
-    # print("Python script output:", stdout.decode())
+#     strava.get_latest_activities()
+#     # subprocess.run(["python", python_script], check=True, capture_output=True)
+#     # stdout = subprocess.check_output(["python", python_script])  # Capture output for logging
+#     # print("Python script output:", stdout.decode())
 
-    return jsonify({"message": "EVENT_RECEIVED"}), 200
+#     return jsonify({"message": "EVENT_RECEIVED"}), 200
 
 @app.route('/webhook', methods=['GET'])
 def verify_webhook():
