@@ -33,6 +33,15 @@
         "documentation": {}
     },
     {
+        "label": "strava",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "strava",
+        "description": "strava",
+        "detail": "strava",
+        "documentation": {}
+    },
+    {
         "label": "requests",
         "kind": 6,
         "isExtraImport": true,
@@ -72,7 +81,25 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def hello():\n    return \"Hello\"\n# VERIFY_TOKEN = \"STRAVA\"\n# python_script = \"strava.py\"\n# @app.route('/webhook', methods=['POST'])\n# def handle_webhook():\n#     # data = request.get_json()\n#     latest_activity_id = request.args.get('object_id')\n#     print(\"Webhook event received with activity:\", latest_activity_id)\n#     strava.get_latest_activities()",
+        "peekOfCode": "def hello():\n    return \"Hello\"\nif __name__ == '__main__':\n    port = int(os.environ.get(\"PORT\", 5000))\n    app.run(port=port)\n    print(\"Webhook is listening on port\", port)  # Log listening message\nVERIFY_TOKEN = \"STRAVA\"\npython_script = \"strava.py\"\n@app.route('/webhook', methods=['POST'])\ndef handle_webhook():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "handle_webhook",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def handle_webhook():\n    # data = request.get_json()\n    latest_activity_id = request.args.get('object_id')\n    print(\"Webhook event received with activity:\", latest_activity_id)\n    # strava.get_latest_activities()\n    # subprocess.run([\"python\", python_script], check=True, capture_output=True)\n    # stdout = subprocess.check_output([\"python\", python_script])  # Capture output for logging\n    # print(\"Python script output:\", stdout.decode())\n    return jsonify({\"message\": \"EVENT_RECEIVED\"}), 200\n@app.route('/webhook', methods=['GET'])",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "verify_webhook",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def verify_webhook():\n    mode = request.args.get('hub.mode')\n    token = request.args.get('hub.verify_token')\n    challenge = request.args.get('hub.challenge')\n    if mode and token:\n        if mode == 'subscribe' and token == VERIFY_TOKEN:\n            print(\"Webhook verified\")\n            return jsonify({\"hub.challenge\": challenge})\n        else:\n            return \"Invalid verification token\", 403",
         "detail": "main",
         "documentation": {}
     },
@@ -81,7 +108,25 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = Flask(__name__)\nif __name__ == '__main__':\n    port = int(os.environ.get(\"PORT\", 5000))\n    app.run(port=port)\n    print(\"Webhook is listening on port\", port)  # Log listening message\n@app.route('/', methods=['GET'])\ndef hello():\n    return \"Hello\"\n# VERIFY_TOKEN = \"STRAVA\"\n# python_script = \"strava.py\"",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/', methods=['GET'])\ndef hello():\n    return \"Hello\"\nif __name__ == '__main__':\n    port = int(os.environ.get(\"PORT\", 5000))\n    app.run(port=port)\n    print(\"Webhook is listening on port\", port)  # Log listening message\nVERIFY_TOKEN = \"STRAVA\"\npython_script = \"strava.py\"",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "VERIFY_TOKEN",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "VERIFY_TOKEN = \"STRAVA\"\npython_script = \"strava.py\"\n@app.route('/webhook', methods=['POST'])\ndef handle_webhook():\n    # data = request.get_json()\n    latest_activity_id = request.args.get('object_id')\n    print(\"Webhook event received with activity:\", latest_activity_id)\n    # strava.get_latest_activities()\n    # subprocess.run([\"python\", python_script], check=True, capture_output=True)\n    # stdout = subprocess.check_output([\"python\", python_script])  # Capture output for logging",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "python_script",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "python_script = \"strava.py\"\n@app.route('/webhook', methods=['POST'])\ndef handle_webhook():\n    # data = request.get_json()\n    latest_activity_id = request.args.get('object_id')\n    print(\"Webhook event received with activity:\", latest_activity_id)\n    # strava.get_latest_activities()\n    # subprocess.run([\"python\", python_script], check=True, capture_output=True)\n    # stdout = subprocess.check_output([\"python\", python_script])  # Capture output for logging\n    # print(\"Python script output:\", stdout.decode())",
         "detail": "main",
         "documentation": {}
     },
